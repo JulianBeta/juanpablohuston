@@ -1,0 +1,518 @@
+{
+  "personal": [
+    {
+      "id": "personal-1",
+      "title": "3DC BOGOTÁ",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/3DC BOGOTÁ.webp",
+      "thumbnail": "/images/personal/3DC BOGOTÁ_thumb.webp"
+    },
+    {
+      "id": "personal-2",
+      "title": "CAMI ZEA",
+      "width": 1600,
+      "height": 1067,
+      "src": "/images/personal/CAMI ZEA.webp",
+      "thumbnail": "/images/personal/CAMI ZEA_thumb.webp"
+    },
+    {
+      "id": "personal-3",
+      "title": "CAMI ZEAII",
+      "width": 1600,
+      "height": 1067,
+      "src": "/images/personal/CAMI ZEAII.webp",
+      "thumbnail": "/images/personal/CAMI ZEAII_thumb.webp"
+    },
+    {
+      "id": "personal-4",
+      "title": "CAMI ZEAIII",
+      "width": 1600,
+      "height": 1067,
+      "src": "/images/personal/CAMI ZEAIII.webp",
+      "thumbnail": "/images/personal/CAMI ZEAIII_thumb.webp"
+    },
+    {
+      "id": "personal-5",
+      "title": "CAVE",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/CAVE.webp",
+      "thumbnail": "/images/personal/CAVE_thumb.webp"
+    },
+    {
+      "id": "personal-6",
+      "title": "Catalina Polo II",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/Catalina Polo II.webp",
+      "thumbnail": "/images/personal/Catalina Polo II_thumb.webp"
+    },
+    {
+      "id": "personal-7",
+      "title": "Catalina Polo",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/Catalina Polo.webp",
+      "thumbnail": "/images/personal/Catalina Polo_thumb.webp"
+    },
+    {
+      "id": "personal-8",
+      "title": "DANI I",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/DANI I.webp",
+      "thumbnail": "/images/personal/DANI I_thumb.webp"
+    },
+    {
+      "id": "personal-9",
+      "title": "DANI II",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/DANI II.webp",
+      "thumbnail": "/images/personal/DANI II_thumb.webp"
+    },
+    {
+      "id": "personal-10",
+      "title": "DIA DEL SKATE BOGOTÁ 2024",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/personal/DIA DEL SKATE BOGOTÁ 2024.webp",
+      "thumbnail": "/images/personal/DIA DEL SKATE BOGOTÁ 2024_thumb.webp"
+    },
+    {
+      "id": "personal-11",
+      "title": "ERROR",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/ERROR.webp",
+      "thumbnail": "/images/personal/ERROR_thumb.webp"
+    },
+    {
+      "id": "personal-12",
+      "title": "JUANITA MOLINA",
+      "width": 1600,
+      "height": 1067,
+      "src": "/images/personal/JUANITA MOLINA.webp",
+      "thumbnail": "/images/personal/JUANITA MOLINA_thumb.webp"
+    },
+    {
+      "id": "personal-13",
+      "title": "JUANITA MOLINAII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/personal/JUANITA MOLINAII.webp",
+      "thumbnail": "/images/personal/JUANITA MOLINAII_thumb.webp"
+    },
+    {
+      "id": "personal-14",
+      "title": "JUANITA MOLINAIII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/personal/JUANITA MOLINAIII.webp",
+      "thumbnail": "/images/personal/JUANITA MOLINAIII_thumb.webp"
+    },
+    {
+      "id": "personal-15",
+      "title": "LADECADA",
+      "width": 1600,
+      "height": 1067,
+      "src": "/images/personal/LADECADA.webp",
+      "thumbnail": "/images/personal/LADECADA_thumb.webp"
+    },
+    {
+      "id": "personal-16",
+      "title": "LADECADAII",
+      "width": 1600,
+      "height": 1067,
+      "src": "/images/personal/LADECADAII.webp",
+      "thumbnail": "/images/personal/LADECADAII_thumb.webp"
+    },
+    {
+      "id": "personal-17",
+      "title": "LADECADAIII",
+      "width": 1600,
+      "height": 1067,
+      "src": "/images/personal/LADECADAIII.webp",
+      "thumbnail": "/images/personal/LADECADAIII_thumb.webp"
+    },
+    {
+      "id": "personal-18",
+      "title": "LADECADAIIII",
+      "width": 1600,
+      "height": 1067,
+      "src": "/images/personal/LADECADAIIII.webp",
+      "thumbnail": "/images/personal/LADECADAIIII_thumb.webp"
+    },
+    {
+      "id": "personal-19",
+      "title": "Laura Osma",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/Laura Osma .webp",
+      "thumbnail": "/images/personal/Laura Osma _thumb.webp"
+    },
+    {
+      "id": "personal-20",
+      "title": "Laura OsmaII",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/Laura OsmaII.webp",
+      "thumbnail": "/images/personal/Laura OsmaII_thumb.webp"
+    },
+    {
+      "id": "personal-21",
+      "title": "Noche de Octubre",
+      "width": 1600,
+      "height": 1061,
+      "src": "/images/personal/Noche de Octubre .webp",
+      "thumbnail": "/images/personal/Noche de Octubre _thumb.webp"
+    },
+    {
+      "id": "personal-22",
+      "title": "SAGA UNO",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/SAGA UNO.webp",
+      "thumbnail": "/images/personal/SAGA UNO_thumb.webp"
+    },
+    {
+      "id": "personal-23",
+      "title": "SALIENDO DEL CONCIERTO",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/SALIENDO DEL CONCIERTO.webp",
+      "thumbnail": "/images/personal/SALIENDO DEL CONCIERTO_thumb.webp"
+    },
+    {
+      "id": "personal-24",
+      "title": "SAN JUPITERO 2023",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/SAN JUPITERO 2023.webp",
+      "thumbnail": "/images/personal/SAN JUPITERO 2023_thumb.webp"
+    },
+    {
+      "id": "personal-25",
+      "title": "SPRAY",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/SPRAY.webp",
+      "thumbnail": "/images/personal/SPRAY_thumb.webp"
+    },
+    {
+      "id": "personal-26",
+      "title": "VICTORIA II",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/VICTORIA II.webp",
+      "thumbnail": "/images/personal/VICTORIA II_thumb.webp"
+    },
+    {
+      "id": "personal-27",
+      "title": "VICTORIA III",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/VICTORIA III.webp",
+      "thumbnail": "/images/personal/VICTORIA III_thumb.webp"
+    },
+    {
+      "id": "personal-28",
+      "title": "VICTORIA",
+      "width": 1600,
+      "height": 2414,
+      "src": "/images/personal/VICTORIA.webp",
+      "thumbnail": "/images/personal/VICTORIA_thumb.webp"
+    },
+    {
+      "id": "personal-29",
+      "title": "Valentina Duque 2024 II",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/Valentina Duque 2024 II.webp",
+      "thumbnail": "/images/personal/Valentina Duque 2024 II_thumb.webp"
+    },
+    {
+      "id": "personal-30",
+      "title": "Valentina Duque 2024",
+      "width": 1600,
+      "height": 2413,
+      "src": "/images/personal/Valentina Duque 2024.webp",
+      "thumbnail": "/images/personal/Valentina Duque 2024_thumb.webp"
+    }
+  ],
+  "trabajo": [
+    {
+      "id": "trabajo-1",
+      "title": "BLAME UR PARENTIII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/BLAME UR PARENTIII.webp",
+      "thumbnail": "/images/trabajo/BLAME UR PARENTIII_thumb.webp"
+    },
+    {
+      "id": "trabajo-2",
+      "title": "BLAME UR PARENTS",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/BLAME UR PARENTS.webp",
+      "thumbnail": "/images/trabajo/BLAME UR PARENTS_thumb.webp"
+    },
+    {
+      "id": "trabajo-3",
+      "title": "BLAME UR PARENTSII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/BLAME UR PARENTSII.webp",
+      "thumbnail": "/images/trabajo/BLAME UR PARENTSII_thumb.webp"
+    },
+    {
+      "id": "trabajo-4",
+      "title": "DARIEN",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/DARIEN.webp",
+      "thumbnail": "/images/trabajo/DARIEN_thumb.webp"
+    },
+    {
+      "id": "trabajo-5",
+      "title": "DARIENII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/DARIENII.webp",
+      "thumbnail": "/images/trabajo/DARIENII_thumb.webp"
+    },
+    {
+      "id": "trabajo-6",
+      "title": "FELIPE FIERRO  ARCHETYPE",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/FELIPE FIERRO -ARCHETYPE.webp",
+      "thumbnail": "/images/trabajo/FELIPE FIERRO -ARCHETYPE_thumb.webp"
+    },
+    {
+      "id": "trabajo-7",
+      "title": "FELIPE FIERRO  ARCHETYPEII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/FELIPE FIERRO -ARCHETYPEII.webp",
+      "thumbnail": "/images/trabajo/FELIPE FIERRO -ARCHETYPEII_thumb.webp"
+    },
+    {
+      "id": "trabajo-8",
+      "title": "FELIPE FIERRO  ARCHETYPEIII",
+      "width": 1600,
+      "height": 1067,
+      "src": "/images/trabajo/FELIPE FIERRO -ARCHETYPEIII.webp",
+      "thumbnail": "/images/trabajo/FELIPE FIERRO -ARCHETYPEIII_thumb.webp"
+    },
+    {
+      "id": "trabajo-9",
+      "title": "HYDDEN",
+      "width": 1387,
+      "height": 2080,
+      "src": "/images/trabajo/HYDDEN.webp",
+      "thumbnail": "/images/trabajo/HYDDEN_thumb.webp"
+    },
+    {
+      "id": "trabajo-10",
+      "title": "HYDENII",
+      "width": 1387,
+      "height": 2080,
+      "src": "/images/trabajo/HYDENII.webp",
+      "thumbnail": "/images/trabajo/HYDENII_thumb.webp"
+    },
+    {
+      "id": "trabajo-11",
+      "title": "HYDENIII",
+      "width": 1387,
+      "height": 2080,
+      "src": "/images/trabajo/HYDENIII.webp",
+      "thumbnail": "/images/trabajo/HYDENIII_thumb.webp"
+    },
+    {
+      "id": "trabajo-12",
+      "title": "INDIGNO X MALDITOS HUMANOS",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/INDIGNO X MALDITOS HUMANOS.webp",
+      "thumbnail": "/images/trabajo/INDIGNO X MALDITOS HUMANOS_thumb.webp"
+    },
+    {
+      "id": "trabajo-13",
+      "title": "INDIGNO X MALDITOS HUMANOSII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/INDIGNO X MALDITOS HUMANOSII.webp",
+      "thumbnail": "/images/trabajo/INDIGNO X MALDITOS HUMANOSII_thumb.webp"
+    },
+    {
+      "id": "trabajo-14",
+      "title": "INDIGNO X MALDITOS HUMANOSIII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/INDIGNO X MALDITOS HUMANOSIII.webp",
+      "thumbnail": "/images/trabajo/INDIGNO X MALDITOS HUMANOSIII_thumb.webp"
+    },
+    {
+      "id": "trabajo-15",
+      "title": "IndignoMan",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/IndignoMan.webp",
+      "thumbnail": "/images/trabajo/IndignoMan_thumb.webp"
+    },
+    {
+      "id": "trabajo-16",
+      "title": "IndignoManIII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/IndignoManIII.webp",
+      "thumbnail": "/images/trabajo/IndignoManIII_thumb.webp"
+    },
+    {
+      "id": "trabajo-17",
+      "title": "IndignomanII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/IndignomanII.webp",
+      "thumbnail": "/images/trabajo/IndignomanII_thumb.webp"
+    },
+    {
+      "id": "trabajo-18",
+      "title": "JAMBLOCKJ.R",
+      "width": 1080,
+      "height": 1350,
+      "src": "/images/trabajo/JAMBLOCKJ.R.webp",
+      "thumbnail": "/images/trabajo/JAMBLOCKJ.R_thumb.webp"
+    },
+    {
+      "id": "trabajo-19",
+      "title": "JAMBLOCKJ.RII",
+      "width": 1080,
+      "height": 1350,
+      "src": "/images/trabajo/JAMBLOCKJ.RII.webp",
+      "thumbnail": "/images/trabajo/JAMBLOCKJ.RII_thumb.webp"
+    },
+    {
+      "id": "trabajo-20",
+      "title": "JAMBLOCKJ.RIII",
+      "width": 1080,
+      "height": 1350,
+      "src": "/images/trabajo/JAMBLOCKJ.RIII.webp",
+      "thumbnail": "/images/trabajo/JAMBLOCKJ.RIII_thumb.webp"
+    },
+    {
+      "id": "trabajo-21",
+      "title": "JNF",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/JNF.webp",
+      "thumbnail": "/images/trabajo/JNF_thumb.webp"
+    },
+    {
+      "id": "trabajo-22",
+      "title": "JNFII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/JNFII.webp",
+      "thumbnail": "/images/trabajo/JNFII_thumb.webp"
+    },
+    {
+      "id": "trabajo-23",
+      "title": "JNFIII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/JNFIII.webp",
+      "thumbnail": "/images/trabajo/JNFIII_thumb.webp"
+    },
+    {
+      "id": "trabajo-24",
+      "title": "MERCADO NEGRO ATW",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/MERCADO NEGRO ATW.webp",
+      "thumbnail": "/images/trabajo/MERCADO NEGRO ATW_thumb.webp"
+    },
+    {
+      "id": "trabajo-25",
+      "title": "MERCADO NEGRO ATWII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/MERCADO NEGRO ATWII.webp",
+      "thumbnail": "/images/trabajo/MERCADO NEGRO ATWII_thumb.webp"
+    },
+    {
+      "id": "trabajo-26",
+      "title": "MERCADO NEGRO ATWIII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/MERCADO NEGRO ATWIII.webp",
+      "thumbnail": "/images/trabajo/MERCADO NEGRO ATWIII_thumb.webp"
+    },
+    {
+      "id": "trabajo-27",
+      "title": "MERCADO NEGRO",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/MERCADO NEGRO.webp",
+      "thumbnail": "/images/trabajo/MERCADO NEGRO_thumb.webp"
+    },
+    {
+      "id": "trabajo-28",
+      "title": "MERCADO NEGROII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/MERCADO NEGROII.webp",
+      "thumbnail": "/images/trabajo/MERCADO NEGROII_thumb.webp"
+    },
+    {
+      "id": "trabajo-29",
+      "title": "OLDMAQUINA1",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/OLDMAQUINA1.webp",
+      "thumbnail": "/images/trabajo/OLDMAQUINA1_thumb.webp"
+    },
+    {
+      "id": "trabajo-30",
+      "title": "OLDMAQUINA2",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/OLDMAQUINA2.webp",
+      "thumbnail": "/images/trabajo/OLDMAQUINA2_thumb.webp"
+    },
+    {
+      "id": "trabajo-31",
+      "title": "OLDMAQUINA5",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/OLDMAQUINA5.webp",
+      "thumbnail": "/images/trabajo/OLDMAQUINA5_thumb.webp"
+    },
+    {
+      "id": "trabajo-32",
+      "title": "Valentina Duque LookBook",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/Valentina Duque LookBook.webp",
+      "thumbnail": "/images/trabajo/Valentina Duque LookBook_thumb.webp"
+    },
+    {
+      "id": "trabajo-33",
+      "title": "Valentina Duque LookBookII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/Valentina Duque LookBookII.webp",
+      "thumbnail": "/images/trabajo/Valentina Duque LookBookII_thumb.webp"
+    },
+    {
+      "id": "trabajo-34",
+      "title": "Valentina Duque LookBookIII",
+      "width": 1600,
+      "height": 2400,
+      "src": "/images/trabajo/Valentina Duque LookBookIII.webp",
+      "thumbnail": "/images/trabajo/Valentina Duque LookBookIII_thumb.webp"
+    }
+  ]
+}
