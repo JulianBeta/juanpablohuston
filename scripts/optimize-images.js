@@ -5,8 +5,12 @@ const sharp = require('sharp');
 const SOURCE_DIR = path.join(__dirname, '../fotos');
 const PUBLIC_DIR = path.join(__dirname, '../public/images');
 
-const PERSONAL_SRC = path.join(SOURCE_DIR, 'PERSONAL');
-const TRABAJO_SRC = path.join(SOURCE_DIR, 'TRABAJO');
+const PERSONAL_SRC_NEW = path.join(__dirname, '../pagweb/Personal');
+const PERSONAL_SRC_OLD = path.join(SOURCE_DIR, 'PERSONAL');
+
+const TRABAJO_SRC_NEW = path.join(__dirname, '../pagweb/Trabajo');
+const TRABAJO_SRC_OLD = path.join(SOURCE_DIR, 'TRABAJO');
+
 const COVER_SRC = path.join(SOURCE_DIR, 'PORTADA.jpg');
 
 const PERSONAL_OUT = path.join(PUBLIC_DIR, 'personal');
@@ -16,8 +20,10 @@ const TRABAJO_OUT = path.join(PUBLIC_DIR, 'trabajo');
 function formatTitle(filename) {
   // Remove extension
   const base = path.parse(filename).name;
+  // Strip leading digits followed by space, underscore or hyphen (e.g. "01_Title" -> "Title")
+  let cleanBase = base.replace(/^\d+[\s_]+/, '');
   // Replace underscores or multiple spaces with single space
-  let formatted = base.replace(/[_-]+/g, ' ');
+  let formatted = cleanBase.replace(/[_-]+/g, ' ');
   // Title case it roughly
   return formatted.trim();
 }
@@ -26,6 +32,17 @@ async function ensureDir(dir) {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
+}
+
+// Helper to read and sort files alphabetically
+function getSortedFiles(dir) {
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir)
+    .filter(file => {
+      const fullPath = path.join(dir, file);
+      return fs.statSync(fullPath).isFile() && !file.startsWith('.');
+    })
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
 }
 
 async function processImage(srcPath, destDir, idPrefix, index) {
@@ -93,38 +110,53 @@ async function run() {
     console.warn('Cover image PORTADA.jpg not found.');
   }
 
-  // Process Personal Directory
   const manifest = { personal: [], trabajo: [] };
-  if (fs.existsSync(PERSONAL_SRC)) {
-    const files = fs.readdirSync(PERSONAL_SRC);
-    console.log(`Found ${files.length} items in PERSONAL. Optimizing...`);
-    let idx = 1;
-    for (const file of files) {
-      const fullPath = path.join(PERSONAL_SRC, file);
-      if (fs.statSync(fullPath).isFile()) {
-        const item = await processImage(fullPath, PERSONAL_OUT, 'personal', idx);
-        if (item) {
-          manifest.personal.push(item);
-          idx++;
-        }
-      }
+
+  // Process Personal Directories (New then Old)
+  let pIdx = 1;
+  const personalNewFiles = getSortedFiles(PERSONAL_SRC_NEW);
+  console.log(`Found ${personalNewFiles.length} new items in pagweb/Personal. Optimizing...`);
+  for (const file of personalNewFiles) {
+    const fullPath = path.join(PERSONAL_SRC_NEW, file);
+    const item = await processImage(fullPath, PERSONAL_OUT, 'personal', pIdx);
+    if (item) {
+      manifest.personal.push(item);
+      pIdx++;
     }
   }
 
-  // Process Trabajo Directory
-  if (fs.existsSync(TRABAJO_SRC)) {
-    const files = fs.readdirSync(TRABAJO_SRC);
-    console.log(`Found ${files.length} items in TRABAJO. Optimizing...`);
-    let idx = 1;
-    for (const file of files) {
-      const fullPath = path.join(TRABAJO_SRC, file);
-      if (fs.statSync(fullPath).isFile()) {
-        const item = await processImage(fullPath, TRABAJO_OUT, 'trabajo', idx);
-        if (item) {
-          manifest.trabajo.push(item);
-          idx++;
-        }
-      }
+  const personalOldFiles = getSortedFiles(PERSONAL_SRC_OLD);
+  console.log(`Found ${personalOldFiles.length} old items in fotos/PERSONAL. Optimizing...`);
+  for (const file of personalOldFiles) {
+    const fullPath = path.join(PERSONAL_SRC_OLD, file);
+    const item = await processImage(fullPath, PERSONAL_OUT, 'personal', pIdx);
+    if (item) {
+      manifest.personal.push(item);
+      pIdx++;
+    }
+  }
+
+  // Process Trabajo Directories (New then Old)
+  let tIdx = 1;
+  const trabajoNewFiles = getSortedFiles(TRABAJO_SRC_NEW);
+  console.log(`Found ${trabajoNewFiles.length} new items in pagweb/Trabajo. Optimizing...`);
+  for (const file of trabajoNewFiles) {
+    const fullPath = path.join(TRABAJO_SRC_NEW, file);
+    const item = await processImage(fullPath, TRABAJO_OUT, 'trabajo', tIdx);
+    if (item) {
+      manifest.trabajo.push(item);
+      tIdx++;
+    }
+  }
+
+  const trabajoOldFiles = getSortedFiles(TRABAJO_SRC_OLD);
+  console.log(`Found ${trabajoOldFiles.length} old items in fotos/TRABAJO. Optimizing...`);
+  for (const file of trabajoOldFiles) {
+    const fullPath = path.join(TRABAJO_SRC_OLD, file);
+    const item = await processImage(fullPath, TRABAJO_OUT, 'trabajo', tIdx);
+    if (item) {
+      manifest.trabajo.push(item);
+      tIdx++;
     }
   }
 

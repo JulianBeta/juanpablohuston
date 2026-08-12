@@ -14,11 +14,165 @@ interface GalleryImage {
   thumbnail: string;
 }
 
+const PUBLICACION_IMAGES: GalleryImage[] = [
+  {
+    id: 'pub1',
+    title: 'diario de los nuevos 20\'s - 1',
+    width: 1200,
+    height: 1800,
+    src: '/images/pub-1.jpg',
+    thumbnail: '/images/pub-1.jpg',
+  },
+  {
+    id: 'pub2',
+    title: 'diario de los nuevos 20\'s - 2',
+    width: 1200,
+    height: 1800,
+    src: '/images/pub-2.jpg',
+    thumbnail: '/images/pub-2.jpg',
+  },
+  {
+    id: 'pub5',
+    title: 'diario de los nuevos 20\'s - 3',
+    width: 1200,
+    height: 1800,
+    src: '/images/pub-5.jpg',
+    thumbnail: '/images/pub-5.jpg',
+  },
+];
+
+interface PublicationCarouselProps {
+  currentIndex: number;
+  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
+  onZoom: () => void;
+}
+
+function PublicationCarousel({ currentIndex, setCurrentIndex, onZoom }: PublicationCarouselProps) {
+  const pointerDownX = useRef<number | null>(null);
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev + 1) % PUBLICACION_IMAGES.length);
+  };
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev - 1 + PUBLICACION_IMAGES.length) % PUBLICACION_IMAGES.length);
+  };
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    pointerDownX.current = e.clientX;
+  };
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    if (pointerDownX.current === null) return;
+    const diffX = e.clientX - pointerDownX.current;
+    
+    if (diffX > 50) {
+      setCurrentIndex((prev) => (prev - 1 + PUBLICACION_IMAGES.length) % PUBLICACION_IMAGES.length);
+    } else if (diffX < -50) {
+      setCurrentIndex((prev) => (prev + 1) % PUBLICACION_IMAGES.length);
+    }
+    pointerDownX.current = null;
+  };
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    const rx = -(y / (rect.height / 2)) * 15;
+    const ry = (x / (rect.width / 2)) * 15;
+
+    card.style.setProperty('--rx', rx.toFixed(2));
+    card.style.setProperty('--ry', ry.toFixed(2));
+  };
+
+  const handlePointerLeave = (e: React.PointerEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    card.style.setProperty('--rx', '0');
+    card.style.setProperty('--ry', '0');
+  };
+
+  return (
+    <div className={styles.carouselContainer}>
+      <div
+        className={styles.carouselWrapper}
+        onPointerDown={handlePointerDown}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={() => { pointerDownX.current = null; }}
+      >
+        <button
+          className={`${styles.carouselNavBtn} ${styles.carouselNavPrev}`}
+          onClick={handlePrev}
+          onPointerDown={(e) => e.stopPropagation()}
+          onPointerUp={(e) => e.stopPropagation()}
+          aria-label="Previous image"
+        >
+          &lt;
+        </button>
+
+        {PUBLICACION_IMAGES.map((img, index) => {
+          let cardClass = styles.carouselCard;
+          let isCurrent = false;
+
+          if (index === currentIndex) {
+            cardClass += ` ${styles.carouselCardCurrent}`;
+            isCurrent = true;
+          } else if (index === (currentIndex + 1) % PUBLICACION_IMAGES.length) {
+            cardClass += ` ${styles.carouselCardNext}`;
+          } else {
+            cardClass += ` ${styles.carouselCardPrev}`;
+          }
+
+          return (
+            <div
+              key={img.id}
+              className={cardClass}
+              onClick={isCurrent ? onZoom : () => setCurrentIndex(index)}
+              onPointerMove={isCurrent ? handlePointerMove : undefined}
+              onPointerLeave={isCurrent ? handlePointerLeave : undefined}
+              style={
+                isCurrent
+                  ? {
+                      transition: 'transform 0.1s ease-out, opacity 0.6s ease, z-index 0.6s ease',
+                    }
+                  : undefined
+              }
+            >
+              <Image
+                src={img.src}
+                alt={img.title}
+                fill
+                className={styles.carouselCardImage}
+                sizes="(max-width: 768px) 140px, 200px"
+                priority
+              />
+            </div>
+          );
+        })}
+
+        <button
+          className={`${styles.carouselNavBtn} ${styles.carouselNavNext}`}
+          onClick={handleNext}
+          onPointerDown={(e) => e.stopPropagation()}
+          onPointerUp={(e) => e.stopPropagation()}
+          aria-label="Next image"
+        >
+          &gt;
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [coverActive, setCoverActive] = useState(true);
   const [activeCategory, setActiveCategory] = useState<'trabajo' | 'personal' | 'publicacion'>('trabajo');
   const [activeTrabajoIdx, setActiveTrabajoIdx] = useState(0);
   const [activePersonalIdx, setActivePersonalIdx] = useState(0);
+  const [activePublicacionIdx, setActivePublicacionIdx] = useState(0);
   const [isFading, setIsFading] = useState(false);
   const [lightboxActive, setLightboxActive] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -56,6 +210,14 @@ export default function Home() {
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
+  const galleryRef = useRef<HTMLElement>(null);
+
+  // Scroll main gallery to top when changing category
+  useEffect(() => {
+    if (galleryRef.current) {
+      galleryRef.current.scrollTop = 0;
+    }
+  }, [activeCategory]);
 
   // Check viewport width to determine active view
   useEffect(() => {
@@ -119,8 +281,20 @@ export default function Home() {
   const personalImages: GalleryImage[] = imagesManifest.personal || [];
   const trabajoImages: GalleryImage[] = imagesManifest.trabajo || [];
 
-  const currentImages = activeCategory === 'personal' ? personalImages : trabajoImages;
-  const currentIdx = activeCategory === 'personal' ? activePersonalIdx : activeTrabajoIdx;
+  const currentImages =
+    activeCategory === 'personal'
+      ? personalImages
+      : activeCategory === 'publicacion'
+      ? PUBLICACION_IMAGES
+      : trabajoImages;
+
+  const currentIdx =
+    activeCategory === 'personal'
+      ? activePersonalIdx
+      : activeCategory === 'publicacion'
+      ? activePublicacionIdx
+      : activeTrabajoIdx;
+
   const currentImage = currentImages[currentIdx] || null;
 
   // Handle image transitions (fade out, switch index, fade in)
@@ -137,6 +311,8 @@ export default function Home() {
 
       if (activeCategory === 'personal') {
         setActivePersonalIdx(nextIdx);
+      } else if (activeCategory === 'publicacion') {
+        setActivePublicacionIdx(nextIdx);
       } else {
         setActiveTrabajoIdx(nextIdx);
       }
@@ -419,7 +595,10 @@ export default function Home() {
       </div>
 
       {/* Desktop Main Gallery Area */}
-      <main className={styles.galleryArea}>
+      <main
+        ref={galleryRef}
+        className={`${styles.galleryArea} ${activeCategory === 'publicacion' ? styles.galleryScrollable : ''}`}
+      >
         {activeCategory !== 'publicacion' ? (
           <div className={styles.canvasWrapper}>
             {currentImage && (
@@ -450,7 +629,16 @@ export default function Home() {
           </div>
         ) : (
           <div className={styles.publicationView}>
-            <div className={styles.pubImageWrapper}>
+            <div className={styles.pubCarouselWrapper}>
+              {!isMobile && (
+                <PublicationCarousel
+                  currentIndex={activePublicacionIdx}
+                  setCurrentIndex={setActivePublicacionIdx}
+                  onZoom={() => setLightboxActive(true)}
+                />
+              )}
+            </div>
+            <div className={styles.pubVideoWrapper}>
               {!isMobile && (
                 <video
                   ref={videoRef}
@@ -521,7 +709,16 @@ export default function Home() {
         </div>
       ) : (
         <div className={styles.mobilePubSection}>
-          <div className={styles.pubImageWrapper} style={{ height: '300px' }}>
+          <div className={styles.pubCarouselWrapper} style={{ height: '300px' }}>
+            {isMobile && (
+              <PublicationCarousel
+                currentIndex={activePublicacionIdx}
+                setCurrentIndex={setActivePublicacionIdx}
+                onZoom={() => {}}
+              />
+            )}
+          </div>
+          <div className={styles.pubVideoWrapper} style={{ height: '300px', marginTop: '20px' }}>
             {isMobile && (
               <video
                 ref={mobileVideoRef}
